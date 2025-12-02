@@ -1,0 +1,4 @@
+pandas>=1.5
+numpy>=1.24
+requests>=2.28
+oracledb>=2.2

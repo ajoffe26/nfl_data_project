@@ -25,7 +25,7 @@ CREATE TABLE TEAM(
     CONSTRAINT          division_ck         CHECK (Division     IN ('N', 'E', 'S', 'W'))
 	);
 
-CREATE SEQUENCE seqTID INCREMENT BY 1 START WITH 1;
+
 
 CREATE TABLE PLAYER(
 	PlayerID			Number			    NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE PLAYER(
 	CONSTRAINT			PLAYER_TEAM_FK	    FOREIGN KEY (TeamID)
 							REFERENCES TEAM(TeamID)
 	);
-CREATE SEQUENCE seqPID INCREMENT BY 1 START WITH 1;
+
 
 CREATE TABLE COACH(
 	CoachID			    Number			    NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE COACH(
     CONSTRAINT		    COACH_TEAM_FK	    FOREIGN KEY (TeamID)
                             REFERENCES TEAM(TeamID)
 	);
-CREATE SEQUENCE seqCID INCREMENT BY 1 START WITH 1;
+
 
 CREATE TABLE GAME(
 	GameID				Number			    NOT NULL,
@@ -67,7 +67,7 @@ CREATE TABLE GAME(
     CONSTRAINT          game_week_ck        CHECK (Week BETWEEN 1 AND 18),
     CONSTRAINT          game_teams_ck       CHECK (HomeTeamID <> AwayTeamID)
 	);
-CREATE SEQUENCE seqGID INCREMENT BY 1 START WITH 1;
+
 
 CREATE TABLE GAME_STATS(
 	GameID				Number				NOT NULL,
